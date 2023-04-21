@@ -14,10 +14,17 @@ class TypeCastingTest {
     }
 
     @Test
-    fun testProcessInt() {
+    fun testProcessPositiveInt() {
         val data = 5
         val expectedOutput = "Я получил тип Int = 5, его квадрат равен 25"
         assertEquals(expectedOutput, captureOutput { typeCasting(data) })
+    }
+
+    @Test
+    fun testProcessNegativeInt() {
+        val data = -5
+        val expectedOutput = "Я получил тип Int = -5, его квадрат равен 25"
+        assertEquals(expectedOutput, captureOutput { processInt(data) })
     }
 
     @Test
@@ -28,10 +35,17 @@ class TypeCastingTest {
     }
 
     @Test
-    fun testProcessLocalDate() {
+    fun testProcessOldLocalDate() {
         val data = LocalDate.of(2005, 12, 24)
         val expectedOutput = "Я получил тип LocalDate = 2005-12-24, эта дата меньше чем дата основания Tinkoff"
         assertEquals(expectedOutput, captureOutput { typeCasting(data) })
+    }
+
+    @Test
+    fun testProcessNewLocalDate() {
+        val data = LocalDate.of(2023, 4, 21)
+        val expectedOutput = "Я получил тип LocalDate = 2023-04-21, эта дата не меньше чем дата основания Tinkoff"
+        assertEquals(expectedOutput, captureOutput { processLocalDate (data) })
     }
 
     @Test

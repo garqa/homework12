@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized
 class TranslateNumberToRussianTest(val number: Int, val expected: String) {
 
     @Test
-    fun `test translateNumberToRussian function`() {
+    fun testTranslateNumberToRussian() {
         assertEquals("Failed for number $number", expected, captureOutput{ translateNumberToRussian(number) } )
     }
 

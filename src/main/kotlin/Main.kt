@@ -6,7 +6,7 @@ import java.util.logging.Handler
 fun main() {
     // Демонстрация функции из задачи 1
     val inputIntList = mutableListOf(1, 4, 9, 16, 25)
-    println("Пример решения задачи 1 для списка $inputIntList:")
+    println("Демонстрация решения задачи 1 для списка $inputIntList:")
     inputIntList.squareAll()
     println(inputIntList)
 
